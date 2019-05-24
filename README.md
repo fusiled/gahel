@@ -26,7 +26,10 @@ container environment):
 # Copy the example folder in the workspace
 cp /gael/examples/simpleAdder /gael/workspace/
 cd /gale/workspace/simpleAdder
-# Let's encrypt 3 and 5 with secret.key contained in the folder
+# Let's generate a key-pair
+keygen
+# Let's use the generated keys to  encrypt 3 and
+#  5 with secret.key contained in the folder
 encrypt8 3 secret.key > cipher3.tfhe
 encrypt8 5 secret.key > cipher5.tfhe
 # Concatenate the ciphertext to pass them to GAEL
