@@ -1,0 +1,4 @@
+GATE inv1    1   O=!a;             PIN * INV     1 999 0.9 0.0 0.9 0.0
+GATE nand2   2   O=!(a*b);         PIN * INV     1 999 1.0 0.0 1.0 0.0
+GATE zero    0   O=CONST0;
+GATE one     0   O=CONST1;

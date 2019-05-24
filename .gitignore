@@ -1,0 +1,5 @@
+workspace/
+build/
+bin/
+lib/
+*.key

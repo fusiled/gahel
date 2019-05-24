@@ -1,0 +1,14 @@
+# Modified from http://crete.cadence.com
+GATE ZERO   1  Y=CONST0;
+GATE ONE    1  Y=CONST1;
+GATE NOT    1  Y=!A;                        PIN * UNKNOWN 1 999 1 0 1 0
+GATE NAND   1  Y=!(A*B);                    PIN * UNKNOWN 1 999 1 0 1 0
+GATE AND    1  Y=A*B;                       PIN * UNKNOWN 1 999 1 0 1 0
+GATE ANDNY  1  Y=!A*B;                      PIN * UNKNOWN 1 999 1 0 1 0
+GATE ANDYN  1  Y=A*!B;                      PIN * UNKNOWN 1 999 1 0 1 0
+GATE NOR    1  Y=!(A+B);                    PIN * UNKNOWN 1 999 1 0 1 0
+GATE OR     1  Y=A+B;                       PIN * UNKNOWN 1 999 1 0 1 0
+GATE ORNY   1  Y=!A+B;                      PIN * UNKNOWN 1 999 1 0 1 0
+GATE ORYN   1  Y=A+!B;                      PIN * UNKNOWN 1 999 1 0 1 0
+GATE XOR    1  Y=(A*!B)+(!A*B);             PIN * UNKNOWN 1 999 1 0 1 0
+GATE XNOR   1  Y=!((A*!B)+(!A*B));          PIN * UNKNOWN 1 999 1 0 1 0
