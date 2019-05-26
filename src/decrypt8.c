@@ -34,7 +34,7 @@ int main(int argc, const char* argv[]){
     LweSample * ciphertext;
     for(int i=0; i<DIM; i++){
         ciphertext = new_gate_bootstrapping_ciphertext(params);
-        fprintf(stderr, "Doing bit %d\n",i);
+//        fprintf(stderr, "Doing bit %d\n",i);
         import_gate_bootstrapping_ciphertext_fromFile(ciphertext_fp,ciphertext,params);
 
         int bit = bootsSymDecrypt(ciphertext, key);
