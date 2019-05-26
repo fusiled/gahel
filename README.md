@@ -46,6 +46,15 @@ decrypt8 ciperOutput.tfhe secret.key
 # You should get a 8!
 ```
 
+## Repository Organization
+
+- `src` contains source for utilities
+- `core` contains core scripts for GAHEL
+- `examples` contains examples for starting with GAHEL
+- `support` contains script for installing or cleaning GAHEL installation
+- `bin`,`lib`,`include` and `build` contains several files for making the whole infrastructure work.
+- `workspace` is the suggested folder where people should work.
+
 ## Tips
 
 - Work in the `workspace` folder

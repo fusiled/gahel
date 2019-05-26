@@ -1,1 +1,0 @@
-read_library bfhe.genlib; read_blif yosys_out.blif; choice; map; bfhe_create_net; bfhe_set_cloud_key input_cloud.key; bfhe_load_input cipherInput.tfhe; bfhe_store_output cipherOutput.tfhe

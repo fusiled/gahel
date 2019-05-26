@@ -1,8 +1,0 @@
-read_verilog input.v
-hierarchy -top top
-proc; opt; memory; opt; techmap; opt;
-abc -script "+read_library genlibs/bfhe.genlib; strash; ifraig; scorr; dc2; dretime; strash; dch -f; if; mfs2; lutpack 2; comb; fraig_sweep"
-#abc -lut 2 -g AND,NAND,OR,NOR,XOR
-#flatten
-write_blif yosys_out.blif
-
