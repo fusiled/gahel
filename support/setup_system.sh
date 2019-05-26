@@ -13,8 +13,9 @@ cp -r /etc/skel/.* /home/$USERNAME/
 sh -c "echo \"$GROUP:x:$USERID\" >> /etc/group"
 sh -c "echo \"$USERNAME:x:$USERID:$GROUPID::/home/$USERNAME:/bin/bash\" >> /etc/passwd"
 
-echo "export GAELHOME=/gael"   >> /home/$USERNAME/.bashrc
-echo 'export PATH=$GAELHOME/bin:$PATH'   >> /home/$USERNAME/.bashrc
+echo "export GAHELHOME=/gahel"   >> /home/$USERNAME/.bashrc
+echo 'export PATH=$GAHELHOME/bin:$PATH'   >> /home/$USERNAME/.bashrc
+echo 'export LD_LIBRARY_PATH=$GAHELHOME/lib:$LD_LIBRARY_PATH'   >> /home/$USERNAME/.bashrc
 
-cd /gael
+cd /gahel
 su $USERNAME
