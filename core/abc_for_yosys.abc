@@ -1,0 +1,5 @@
+read_library gahel.genlib
+strash
+ifraig
+scorr
+dc2; dretime; strash; comb; dch -f; if; mfs2; lutpack 2; fraig_sweep

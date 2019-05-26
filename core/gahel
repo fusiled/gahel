@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -x
+set -e
+
+SRC=$( realpath $1 )
+CLOUDKEY=$( realpath $2 )
+CIPHERINPUT=$( realpath $3 )
+CIPHEROUT=$( realpath $4 )
+
+#Setup build directory
+CURDIR="$PWD"
+BUILDDIR=$( mktemp -d gahel_build_XXXXX )
+cp $SRC $BUILDDIR/input.v
+cp $CIPHERINPUT $BUILDDIR/cipherInput.tfhe
+cp $CLOUDKEY $BUILDDIR/cloud.key
+cp $GAHELHOME/core/abc.rc $BUILDDIR/
+cp $GAHELHOME/core/genlibs/gahel.genlib $BUILDDIR/
+cp $GAHELHOME/core/abc_for_yosys.abc $BUILDDIR/
+cd $BUILDDIR
+
+#Run gahel core
+# input.v -> yosys -> intermediate.blif
+yosys -s $GAHELHOME/core/yoscript.ys
+
+# intermediate.blif -> abc -> output.tfhe
+abc -F $GAHELHOME/core/run_net.abc
+cp cipherOutput.tfhe $CIPHEROUT
+
+cd $CURDIR

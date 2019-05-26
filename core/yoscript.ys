@@ -1,0 +1,9 @@
+read_verilog input.v
+hierarchy -top top
+proc; opt; memory; opt; techmap; opt;
+#abc -script "+read_library gahel.genlib; strash; ifraig; scorr; dc2; dretime; strash; comb; dch -f; if; mfs2; lutpack 2; fraig_sweep"
+#abc -lut 2 -g AND,NAND,OR,NOR,XOR
+abc -script abc_for_yosys.abc
+flatten
+write_blif intermediate.blif
+

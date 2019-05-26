@@ -1,0 +1,8 @@
+read_library gahel.genlib;
+read_blif intermediate.blif;
+choice; map;
+bfhe_create_net; 
+bfhe_set_cloud_key cloud.key; 
+bfhe_load_input cipherInput.tfhe
+bfhe_eval -g
+bfhe_store_output cipherOutput.tfhe
