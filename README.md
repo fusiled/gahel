@@ -14,6 +14,7 @@ cd gahel
 #This will build a docker image end enter in it
 bash launch.sh
 #This will build what gahel needs
+su <your-username>
 bash support/setup_gahel.sh
 ```
 
