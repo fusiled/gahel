@@ -1,4 +1,4 @@
-read_verilog input.v
+read_verilog -I../ input.v
 hierarchy -top top
 proc; opt; memory; opt; techmap; opt;
 #abc -script "+read_library gahel.genlib; strash; ifraig; scorr; dc2; dretime; strash; comb; dch -f; if; mfs2; lutpack 2; fraig_sweep"
