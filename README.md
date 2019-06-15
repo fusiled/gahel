@@ -26,7 +26,7 @@ container environment):
 ```
 # Copy the example folder in the workspace
 cp /gahel/examples/simpleAdder /gahel/workspace/
-cd /gale/workspace/simpleAdder
+cd /gahel/workspace/simpleAdder
 # Let's generate a key-pair
 keygen
 # Let's use the generated keys to  encrypt 3 and
