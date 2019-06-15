@@ -42,21 +42,6 @@ cp -dr src/include/*  $GAHELINCLUDE/tfhe
 
 cd $GAHELBUILD
 
-TASKFLOWDESTINATION="cpp-taskflow"
-# Setup cpp-taskflow for abc
-if [ ! -d "$TASKFLOWDESTINATION" ] ; then
-    git clone https://github.com/cpp-taskflow/cpp-taskflow $TASKFLOWDESTINATION
-else
-    echo "Warning: Not cloning cpp-taskflow since destination folder ($TASKFLOWDESTINATION) already exists"
-fi
-
-mkdir -p taskflow_build
-cd taskflow_build
-rm -drf ./*
-cmake -DCMAKE_INSTALL_PREFIX=$GAHELHOME ../$TASKFLOWDESTINATION
-make -j
-make -j install
-
 cd $GAHELBUILD
 
 ABCDESTINATION="abc"
