@@ -1,10 +1,9 @@
-
+//Add, Sub, Mul and Div are built-in
+//Be aware of the overflows/underflows that may happen
 module top(A, B, SUM);  
 input  [7:0] A;  
 input  [7:0] B;  
 output [7:0] SUM;  
-wire [8:0] tmp; 
  
-  assign tmp = A + B;  
-  assign SUM = tmp [7:0];  
+  assign SUM = A + B;  
 endmodule
