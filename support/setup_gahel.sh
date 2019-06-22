@@ -53,7 +53,7 @@ else
 fi
 
 cd abc
-make -j
+make -j4
 ln -s $PWD/abc $GAHELBIN/abc
 cp abc.rc $GAHELHOME/support/
 
