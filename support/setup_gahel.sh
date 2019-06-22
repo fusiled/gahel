@@ -3,6 +3,9 @@
 
 set -e
 
+
+NCORES="4"
+
 CURDIR="$PWD"
 
 GAHELBUILD="$GAHELHOME/build"
@@ -10,6 +13,8 @@ GAHELLIB="$GAHELHOME/lib"
 GAHELBIN="$GAHELHOME/bin"
 GAHELINCLUDE="$GAHELHOME/include"
 GAHELWORKSPACE="$GAHELHOME/workspace"
+
+
 
 #Create needed dirs
 mkdir -p $GAHELBUILD
@@ -53,7 +58,7 @@ else
 fi
 
 cd abc
-make -j4
+make -j$NCORES
 ln -s $PWD/abc $GAHELBIN/abc
 cp abc.rc $GAHELHOME/support/
 
