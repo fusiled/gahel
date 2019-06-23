@@ -1,4 +1,4 @@
-`include "cnn/macro.v"
+`include "utils/macro.v"
 
 /*
 * To call a macro, remember to add the backtick ` before the name of the
