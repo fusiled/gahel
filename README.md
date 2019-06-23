@@ -4,7 +4,8 @@
 GAHEL is able to perform **ANY** kind of homomorphic operation. It combines
 the Verilog programming language to produce a gate-list that uses homomorphic
 encryption to perform computation over encrypted data in a gate-level style.
-
+This infrastrcture allow to write any kind of program without having to re-engineer
+the system. For further details see the `documentation` folder 
 
 ## Quickstart
 To setup GAHEL:
@@ -51,10 +52,13 @@ decrypt8 ciperOutput.tfhe secret.key
 
 - `src` contains source for utilities
 - `core` contains core scripts for GAHEL
+- `cnn` contains verilog source for running a CNn with half-precision floats
 - `examples` contains examples for starting with GAHEL
 - `support` contains script for installing or cleaning GAHEL installation
 - `bin`,`lib`,`include` and `build` contains several files for making the whole infrastructure work.
+  - `include` contains the `verilog` folder. This folder is automatically included in the verilog code
 - `workspace` is the suggested folder where people should work.
+
 
 ## Tips
 
