@@ -1,6 +1,7 @@
 read_library gahel.genlib;
 read_blif intermediate.blif;
-choice; map;
+strash; rewrite; balance; rewrite; balance; rewrite; balance; rewrite; balance;
+refactor; cleanup; choice;  map;
 write_blif pre_create.blif
 write_dot pre_create.dot
 bfhe_create_net; 
