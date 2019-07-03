@@ -30,20 +30,19 @@ ln -s $GAHELHOME/core/gahel $GAHELBIN
 # the built libraries
 cd $GAHELBUILD
 
-TFHEDESTINATION="tfhe"
+TFHEDESTINATION="cufhe"
 if [ ! -d "$TFHEDESTINATION" ] ; then
-	git clone https://github.com/tfhe/tfhe $TFHEDESTINATION
+	git clone https://github.com/vernamlab/cuFHE $TFHEDESTINATION
 else
 	echo "Warning: Not cloning tfhe since destination folder ($TFHEDESTINATION) already exists"
 fi
 
-cd $TFHEDESTINATION
-mkdir -p build; cd build; rm -drf ./*; cmake ../src -DENABLE_FFTW=on; make
-cp libtfhe/*.so $GAHELLIB/
+cd $TFHEDESTINATION/cufhe
+make
+cp bin/*.so $GAHELLIB/
 
 mkdir -p $GAHELINCLUDE/tfhe
-cd ../
-cp -dr src/include/*  $GAHELINCLUDE/tfhe
+cp -dr include/*  $GAHELINCLUDE/tfhe
 
 cd $GAHELBUILD
 
